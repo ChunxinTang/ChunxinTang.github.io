@@ -405,7 +405,7 @@ function initLoadingScreen() {
             height: 15px;
             background: #444;
             border-radius: 5px;
-            animation: lidOpen 1.2s ease-in-out 0.8s forwards;
+            animation: lidOpen 0.8s ease-in-out 0.6s forwards;
         }
         
         .vinyl-disc-unboxed {
@@ -414,7 +414,7 @@ function initLoadingScreen() {
             left: 50%;
             transform: translate(-50%, -50%);
             opacity: 0;
-            animation: vinylAppear 1s ease-in-out 2s forwards;
+            animation: vinylAppear 0.8s ease-in-out 1.4s forwards;
         }
         
         .vinyl-disc {
@@ -423,7 +423,7 @@ function initLoadingScreen() {
             background: #000;
             border-radius: 50%;
             position: relative;
-            animation: spin 2s linear infinite 3s;
+            animation: spin 2s linear infinite 2.2s;
         }
         
         .vinyl-disc::after {
@@ -443,25 +443,34 @@ function initLoadingScreen() {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            font-family: 'Special Elite', cursive;
-            font-size: 0.6rem;
-            line-height: 1.2;
+            width: 60px;
+            height: 60px;
             opacity: 0;
-            animation: labelAppear 1s ease-in-out 3.5s forwards;
+            animation: labelAppear 1s ease-in-out 2.5s forwards;
         }
         
         .artist-name {
-            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: 'Special Elite', cursive;
+            font-size: 0.5rem;
             font-weight: bold;
-            margin-bottom: 2px;
+            white-space: nowrap;
         }
         
         .album-title {
-            display: block;
-            font-size: 0.5rem;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: 'Special Elite', cursive;
+            font-size: 0.4rem;
             opacity: 0.8;
+            white-space: nowrap;
         }
         
         .loading-text {
@@ -507,7 +516,7 @@ function initLoadingScreen() {
             loadingScreen.remove();
             initTypingAnimations();
         }, 500);
-    }, 4500); // Total animation time: 4.5 seconds
+    }, 3200); // Total animation time: 3.2 seconds
 }
 
 // Initialize all functions when DOM is loaded
