@@ -521,7 +521,18 @@ function initLoadingScreen() {
 
 // Initialize all functions when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    initLoadingScreen();
+    // Check if this is the first visit or a navigation
+    const isFirstVisit = !sessionStorage.getItem('hasVisited');
+    
+    if (isFirstVisit) {
+        // Show loading screen only on first visit
+        initLoadingScreen();
+        sessionStorage.setItem('hasVisited', 'true');
+    } else {
+        // Skip loading screen for subsequent navigations
+        initTypingAnimations();
+    }
+    
     initSmoothScrolling();
     initActiveNavigation();
     initScrollAnimations();
