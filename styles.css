@@ -171,42 +171,18 @@ body {
 }
 
 .shape-1 {
-    width: 80px;
-    height: 80px;
-    top: 20%;
-    left: 10%;
+    width: 100px;
+    height: 100px;
+    top: 25%;
+    left: 8%;
     animation-delay: 0s;
 }
 
 .shape-2 {
-    width: 120px;
-    height: 120px;
-    top: 60%;
-    right: 15%;
-    animation-delay: 2s;
-}
-
-.shape-3 {
-    width: 60px;
-    height: 60px;
-    top: 30%;
-    right: 25%;
-    animation-delay: 4s;
-}
-
-.shape-4 {
-    width: 100px;
-    height: 100px;
-    bottom: 20%;
-    left: 20%;
-    animation-delay: 1s;
-}
-
-.shape-5 {
-    width: 70px;
-    height: 70px;
-    top: 10%;
-    right: 40%;
+    width: 80px;
+    height: 80px;
+    top: 65%;
+    right: 12%;
     animation-delay: 3s;
 }
 
@@ -218,27 +194,15 @@ body {
 }
 
 .icon-1 {
-    top: 25%;
-    left: 5%;
-    animation-delay: 0.5s;
+    top: 20%;
+    right: 8%;
+    animation-delay: 1s;
 }
 
 .icon-2 {
-    top: 70%;
-    right: 10%;
-    animation-delay: 2.5s;
-}
-
-.icon-3 {
-    top: 15%;
-    right: 30%;
-    animation-delay: 4.5s;
-}
-
-.icon-4 {
-    bottom: 30%;
-    left: 15%;
-    animation-delay: 1.5s;
+    bottom: 25%;
+    left: 10%;
+    animation-delay: 2s;
 }
 
 @keyframes float {
@@ -363,6 +327,63 @@ body {
     z-index: 3;
 }
 
+/* Hero Profile Photo */
+.hero-profile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+.profile-photo {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover img {
+    transform: scale(1.1);
+}
+
+.profile-frame {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--lover-pink), var(--lover-coral), var(--lover-peach));
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -402,29 +423,32 @@ body {
 }
 
 .main-headline {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.3;
     font-family: 'Special Elite', cursive;
-    max-width: 800px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     animation: fadeInUp 1s ease 0.7s both;
 }
 
 .subline {
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
     opacity: 0.9;
     animation: fadeInUp 1s ease 0.9s both;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Hero Actions */
 .hero-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     animation: fadeInUp 1s ease 1.1s both;
 }
 
@@ -2291,13 +2315,14 @@ body {
     }
 
     .main-headline {
-        font-size: 2rem;
+        font-size: 2.2rem;
         max-width: 90%;
         padding: 0 20px;
     }
 
     .subline {
         font-size: 1rem;
+        max-width: 85%;
     }
 
     .vinyl-player {
@@ -2312,8 +2337,8 @@ body {
     .hero-actions {
         flex-direction: column;
         align-items: center;
-        gap: 0.8rem;
-        margin-bottom: 2rem;
+        gap: 1rem;
+        margin-bottom: 3rem;
     }
 
     .cta-button {
@@ -2331,6 +2356,11 @@ body {
 
     .floating-icon {
         font-size: 1.5rem;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
     }
 
     .hero-badge {
